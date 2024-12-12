@@ -1,6 +1,5 @@
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
-
 import CartContext from '../../context/CartContext'
 
 import './index.css'
@@ -52,7 +51,7 @@ const Header = props => {
 
         <div className="nav-bar-large-container">
           <Link to="/">
-            <h1 className="website-name trendify">Trendify</h1>
+            <h1 className="website-name trendify">Trendify...</h1>
           </Link>
           <ul className="nav-menu">
             <li className="nav-menu-item">
