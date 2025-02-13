@@ -91,8 +91,8 @@ class AllProductsSection extends Component {
       apiStatus: apiStatusConstants.inProgress,
     })
     const jwtToken = Cookies.get('jwt_token')
-    const {activeOptionId, activeCategoryId, searchInput} = this.state
-    const {activeRatingId} = this.state
+    const {activeOptionId, activeCategoryId} = this.state
+    const {searchInput, activeRatingId} = this.state
     const apiUrl = `https://apis.ccbp.in/products?sort_by=${activeOptionId}&category=${activeCategoryId}&title_search=${searchInput}&rating=${activeRatingId}`
     const options = {
       headers: {
@@ -214,12 +214,8 @@ class AllProductsSection extends Component {
     this.setState({activeCategoryId}, this.getProducts)
   }
 
-  enterSearchInput = () => {
-    this.getProducts()
-  }
-
   changeSearchInput = searchInput => {
-    this.setState({searchInput})
+    this.setState({searchInput}, this.getProducts)
   }
 
   render() {
@@ -232,7 +228,7 @@ class AllProductsSection extends Component {
           categoryOptions={categoryOptions}
           ratingsList={ratingsList}
           changeSearchInput={this.changeSearchInput}
-          enterSearchInput={this.enterSearchInput}
+          fetchProducts={this.getProducts}
           activeCategoryId={activeCategoryId}
           activeRatingId={activeRatingId}
           changeCategory={this.changeCategory}

@@ -6,8 +6,8 @@ import './index.css'
 
 class LoginForm extends Component {
   state = {
-    username: '',
-    password: '',
+    username: 'rahul',
+    password: 'rahul@2021',
     showSubmitError: false,
     errorMsg: '',
   }
@@ -64,6 +64,8 @@ class LoginForm extends Component {
           id="password"
           className="password-input-field"
           value={password}
+          defaultValue={password}
+          readOnly
           onChange={this.onChangePassword}
           placeholder="Password (rahul@2021)"
         />
@@ -84,6 +86,8 @@ class LoginForm extends Component {
           id="username"
           className="username-input-field"
           value={username}
+          defaultValue={username}
+          readOnly
           onChange={this.onChangeUsername}
           placeholder="Username (rahul)"
         />
@@ -102,17 +106,16 @@ class LoginForm extends Component {
     return (
       <div className="login-form-container">
         <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-          className="login-website-logo-mobile-img"
-          alt="website logo"
-        />
-        <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
           className="login-img"
           alt="website login"
         />
         <form className="form-container" onSubmit={this.submitForm}>
-          <h1 className="website-name">Trendify</h1>
+          <img
+            src="https://mytrendify.com/wp-content/uploads/2024/09/Logo_Trendify_Plan-de-travail-1.png"
+            alt="img"
+            className="logosize_sm"
+          />
           <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
           <button type="submit" className="login-button">

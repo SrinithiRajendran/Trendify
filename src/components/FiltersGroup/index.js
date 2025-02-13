@@ -1,5 +1,4 @@
 import {BsSearch} from 'react-icons/bs'
-
 import './index.css'
 
 const FiltersGroup = props => {
@@ -67,16 +66,10 @@ const FiltersGroup = props => {
     </>
   )
 
-  const onEnterSearchInput = event => {
-    const {enterSearchInput} = props
-    if (event.key === 'Enter') {
-      enterSearchInput()
-    }
-  }
-
   const onChangeSearchInput = event => {
-    const {changeSearchInput} = props
+    const {changeSearchInput, fetchProducts} = props
     changeSearchInput(event.target.value)
+    fetchProducts()
   }
 
   const renderSearchInput = () => {
@@ -89,7 +82,6 @@ const FiltersGroup = props => {
           className="search-input"
           placeholder="Search"
           onChange={onChangeSearchInput}
-          onKeyDown={onEnterSearchInput}
         />
         <BsSearch className="search-icon" />
       </div>

@@ -33,7 +33,11 @@ const Header = props => {
       <div className="nav-content">
         <div className="nav-bar-mobile-logo-container">
           <Link to="/">
-            <h1 className="website-name ">Trendify</h1>
+            <img
+              src="https://mytrendify.com/wp-content/uploads/2024/09/Logo_Trendify_Plan-de-travail-1.png"
+              alt="img"
+              className="logosize_sm"
+            />
           </Link>
 
           <button
@@ -51,7 +55,11 @@ const Header = props => {
 
         <div className="nav-bar-large-container">
           <Link to="/">
-            <h1 className="website-name trendify">Trendify...</h1>
+            <img
+              src="https://mytrendify.com/wp-content/uploads/2024/09/Logo_Trendify_Plan-de-travail-1.png"
+              alt="img"
+              className="logosize"
+            />
           </Link>
           <ul className="nav-menu">
             <li className="nav-menu-item">
